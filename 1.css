@@ -1,0 +1,308 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300italic);
+
+@media only screen and (max-width: 500px) {
+    /* CSS cho thiết bị có chiều rộng tối đa là 600px */
+    header {
+        font-size: 18px; /* Thay đổi kích thước font cho header */
+        background-color: #1b1e44;
+        width: 100%;
+        text-align: center; /* căn giữa nội dung */
+    }
+
+    header > img {
+        max-width: 280px;
+        height: auto;
+    }
+
+    footer {
+        background-color: #1b1e44;
+        color: gray;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 0;
+        margin: 0;
+        padding-top: 20px;
+        padding-bottom: 25px;
+        
+    }
+}
+
+header {
+    font-size: 18px; /* Thay đổi kích thước font cho header */
+    background-color: #1b1e44;
+    width: 100%;
+    text-align: center; /* căn giữa nội dung */
+}
+
+header > img {
+    max-width: 280px;
+    height: auto;
+}
+
+footer {
+    background-color: #1b1e44;
+    color: gray;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-weight: bold;
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    
+}
+
+html,body {
+    font-family: 'Pacifico';
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+h2 {
+    font-size: 18px;
+    color: #555;
+    margin-top: 20px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    font-family: 'Pacifico';
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+p {
+    margin-top: 10px;
+}
+
+p#alertMessage, p#checkNgaySinhAlertMessage, p#checkHoTenAlertMessage {
+    color: red;
+    display: none;
+}
+
+.center {
+    text-align: center;
+}
+
+div#home {
+    margin-top: 250px;
+}
+
+div#question1 {
+    display: none;
+    font-size: 20px
+}
+
+div#question1 > img {
+    display: none;
+    max-width: 320px;
+    height: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+div#question2 {
+    display: none;
+    font-size: 20px
+}
+
+div#question3 {
+    display: none;
+    font-size: 20px
+}
+
+div#question4 {
+    display: none;
+    font-size: 20px
+}
+
+div#loadingAnimation {
+    display: none;
+}
+
+div#confirm {
+    display: none;
+    font-size: 20px
+}
+
+div#confirm > h1 {
+    color: red;
+}
+
+div#chaychu {
+    display: none;
+    margin-top: 250px;
+    font-family: Pacifico;
+    font-size: 25px;
+}
+
+div#chaychu2 {
+    display: none;
+    margin-top: 250px;
+    font-family: Pacifico;
+    font-size: 25px;
+}
+
+div#chaychu3 {
+    display: none;
+    margin-top: 250px;
+    font-family: Pacifico;
+    font-size: 25px;
+}
+
+div#chaychu4 {
+    display: none;
+    margin-top: 250px;
+    font-family: Pacifico;
+    font-size: 25px;
+}
+
+div#chaychu5 {
+    display: none;
+    margin-top: 250px;
+    font-family: Pacifico;
+    font-size: 25px;
+}
+
+div#banhkem {
+    display: none;
+}
+
+div#loichuc {
+    display: none;
+}
+
+div#banhkem > button {
+    margin-top: 250px;
+}
+
+svg#cake {
+    display: none;
+}
+
+button#batdau {
+    display: block;
+    margin: 0 auto;
+}
+
+button#tieptuc5 {
+    margin-left: 120px;
+}
+
+.opacity {
+    opacity: 0.1;
+}
+
+p.opacity {
+    font-size: 10px;
+    margin: 0;
+}
+
+h1#reminder {
+    margin-bottom: 0;
+}
+
+input[type="text"]:focus {
+    background-color: #f4f4f4; /* Màu nền khi input được focus */
+    color: #333; /* Màu chữ khi input được focus */
+}
+
+input[type="text"]:hover {
+    background-color: #f9f9f9; /* Màu nền khi di chuột qua input */
+}
+
+input[type="text"]:hover {
+    cursor: pointer; /* Đổi kiểu con trỏ thành pointer khi hover vào input */
+}
+
+input[type="text"] {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng cho input */
+    font-family: Pacifico;
+    font-size: 20px;
+}
+
+img#hinh {
+    max-width: 320px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 120px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+div#hienhinhanh {
+    display: none;
+}
+
+div#banhkem {
+    display: none;
+}
+
+input[type="radio"] {
+    transform: scale(1.5); /* Phóng to kích thước của nút radio */
+    margin-bottom: 10px;
+}
+
+input[type="radio"]:checked {
+    background-color: #007bff; /* Màu nền khi được chọn */
+}
+
+.loading-animation {
+    border: 8px solid rgba(255, 255, 255, 0.3); /* Màu và độ rộng của vòng tròn */
+    border-top: 8px solid #007bff; /* Màu và độ rộng của vòng tròn khi quay */
+    border-radius: 50%; /* Để tạo hình dạng vòng tròn */
+    width: 50px; /* Kích thước vòng tròn */
+    height: 50px; /* Kích thước vòng tròn */
+    animation: spin 1s linear infinite; /* Tạo hiệu ứng quay */
+    margin-top: 260px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.smooth-display {
+    opacity: 0;
+    animation: fadeInOut 4s forwards;
+}
+  
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+}
