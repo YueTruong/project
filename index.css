@@ -50,11 +50,14 @@ footer {
     text-align: center;
     font-weight: bold;
     position: fixed;
-    bottom: 0;
     margin: 0;
     padding-top: 20px;
     padding-bottom: 25px;
     
+}
+
+div#noidung {
+    height: 765px;
 }
 
 html,body {
@@ -93,10 +96,12 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    margin-top: 10px;
     transition-duration: 0.4s;
     text-decoration: none;
     font-family: 'Pacifico';
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 
 button:disabled {
@@ -117,21 +122,28 @@ p#alertMessage, p#checkNgaySinhAlertMessage, p#checkHoTenAlertMessage {
     text-align: center;
 }
 
+.imgcenter {
+    display: block;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.displayimg {
+    border-radius: 15px;
+}
+
 div#home {
     margin-top: 250px;
 }
 
 div#question1 {
     display: none;
-    font-size: 20px
+    font-size: 20px;
+    margin: 0 auto;
 }
 
 div#question1 > img {
     display: none;
-    max-width: 320px;
-    height: auto;
-    padding-left: 5px;
-    padding-right: 5px;
 }
 
 div#question2 {
@@ -164,52 +176,40 @@ div#confirm > h1 {
 
 div#chaychu {
     display: none;
-    margin-top: 250px;
-    font-family: Pacifico;
+    margin-top: 260px;
+    font-family: 'Pacifico';
     font-size: 25px;
 }
 
 div#chaychu2 {
     display: none;
-    margin-top: 250px;
-    font-family: Pacifico;
+    margin-top: 260px;
+    font-family: 'Pacifico';
     font-size: 25px;
 }
 
 div#chaychu3 {
     display: none;
-    margin-top: 250px;
-    font-family: Pacifico;
+    margin-top: 260px;
+    font-family: 'Pacifico';
     font-size: 25px;
 }
 
 div#chaychu4 {
     display: none;
-    margin-top: 250px;
-    font-family: Pacifico;
+    margin-top: 260px;
+    font-family: 'Pacifico';
     font-size: 25px;
 }
 
 div#chaychu5 {
     display: none;
-    margin-top: 250px;
-    font-family: Pacifico;
+    margin-top: 260px;
+    font-family: 'Pacifico';
     font-size: 25px;
 }
 
 div#banhkem {
-    display: none;
-}
-
-div#loichuc {
-    display: none;
-}
-
-div#banhkem > button {
-    margin-top: 250px;
-}
-
-svg#cake {
     display: none;
 }
 
@@ -219,7 +219,8 @@ button#batdau {
 }
 
 button#tieptuc5 {
-    margin-left: 120px;
+    display: block;
+    margin: 0 auto;
 }
 
 .opacity {
@@ -254,21 +255,23 @@ input[type="text"] {
     font-size: 20px;
 }
 
-img#hinh {
+/* img#hinh {
     max-width: 320px;
     align-items: center;
     justify-content: center;
     padding-top: 120px;
     padding-left: 5px;
     padding-right: 5px;
-}
+} */
 
 div#hienhinhanh {
     display: none;
+    margin-top: 100px;
 }
 
 div#banhkem {
     display: none;
+    margin-top: 100px;
 }
 
 input[type="radio"] {
