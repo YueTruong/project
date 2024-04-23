@@ -8,8 +8,8 @@
     <link rel="icon" type="x-icon" href="images\preloader.png" class="responsive">
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
-    <header>
+<body id="body">
+    <header id="header">
         <img src="images\logo.png" alt="">
     </header>
 
@@ -422,12 +422,18 @@
             var chayChu5Div = document.getElementById("chaychu5");
             var hinhAnhDiv = document.getElementById("hienhinhanh");
             var banhKemDiv = document.getElementById("banhkem");
+            var header = document.getElementById("header");
+            var footer = document.getElementById("footer");
+            var body = document.getElementById("body");
             
             loadingAnimation.style.display = "block";
             ConfirmDiv.style.display = "none";
-
+            
             setTimeout(function() {
                 loadingAnimation.style.display = "none";
+                header.style.background = "#ffc0cb";
+                footer.style.background = "#ffc0cb";
+                body.style.background = "#ffc0cb";
                 setTimeout(function() {
                     chayChuDiv.style.display = "block";
                     setTimeout(function() {
@@ -460,7 +466,7 @@
             }, 2000);
         }
     </script>
-    <footer>
+    <footer id="footer">
         © Ngồi mò mấy ngày bởi YueTruong - All rights reserved.
     </footer>
 </body>
