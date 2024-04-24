@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300italic);
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1920px) {
     header {
         font-size: 18px;
         background-color: #1b1e44;
@@ -9,12 +9,12 @@
     }
 
     header > img {
-        max-width: 280px;
-        height: auto;
+        width: auto;
+        height: 87px;
     }
 
     footer {
-        position: fixed;
+        /* position: fixed; */
         background-color: #1b1e44;
         width: 100%;
         text-align: center;
@@ -22,39 +22,10 @@
         height: auto;
         font-weight: bold;
         margin: 0;
-        bottom: 0;
-        padding-top: 20px;
+        /* bottom: 0; */
+        padding-top: 25px;
         padding-bottom: 25px;
     }
-}
-
-header {
-    font-size: 18px;
-    background-color: #1b1e44;
-    width: 100%;
-    text-align: center;
-}
-
-header > img {
-    max-width: 280px;
-    height: auto;
-}
-
-footer {
-    background-color: #1b1e44;
-    width: 100%;
-    text-align: center;
-    color: gray;
-    height: auto;
-    font-weight: bold;
-    position: fixed;
-    margin: 0;
-    padding-top: 20px;
-    padding-bottom: 25px;
-}
-
-div#noidung {
-    height: 765px;
 }
 
 html,body {
@@ -67,7 +38,6 @@ html,body {
 div {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
 }
 
 h1 {
@@ -129,14 +99,20 @@ p#alertMessage, p#checkNgaySinhAlertMessage, p#checkHoTenAlertMessage {
     border-radius: 15px;
 }
 
+div#noidung {
+    height: 798px;
+}
+
 div#home {
-    margin-top: 250px;
+    padding-top: 310px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 div#question1 {
     display: none;
     font-size: 20px;
-    margin: 0 auto;
+    padding: 15px;
 }
 
 div#question1 > img {
@@ -145,26 +121,32 @@ div#question1 > img {
 
 div#question2 {
     display: none;
-    font-size: 20px
+    font-size: 20px;
+    padding: 15px;
 }
 
 div#question3 {
     display: none;
-    font-size: 20px
+    font-size: 20px;
+    padding: 15px;
 }
 
 div#question4 {
     display: none;
-    font-size: 20px
+    font-size: 20px;
+    padding: 15px;
 }
 
 div#loadingAnimation {
     display: none;
+    padding: 15px;
+    margin-top: 180px;
 }
 
 div#confirm {
     display: none;
-    font-size: 20px
+    font-size: 20px;
+    padding: 15px;
 }
 
 div#confirm > h1 {
@@ -173,41 +155,61 @@ div#confirm > h1 {
 
 div#chaychu {
     display: none;
-    margin-top: 260px;
     font-family: 'Pacifico';
     font-size: 25px;
+    padding-top: 330px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 div#chaychu2 {
     display: none;
-    margin-top: 260px;
     font-family: 'Pacifico';
     font-size: 25px;
+    padding-top: 330px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 div#chaychu3 {
     display: none;
-    margin-top: 260px;
     font-family: 'Pacifico';
     font-size: 25px;
+    padding-top: 330px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+div#hienhinhanh {
+    display: none;
+    padding-top: 180px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 div#chaychu4 {
     display: none;
-    margin-top: 260px;
     font-family: 'Pacifico';
     font-size: 25px;
+    padding-top: 330px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 div#chaychu5 {
     display: none;
-    margin-top: 260px;
     font-family: 'Pacifico';
     font-size: 25px;
+    padding-top: 330px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 div#banhkem {
     display: none;
+    padding-top: 180px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 button#batdau {
@@ -252,25 +254,6 @@ input[type="text"] {
     font-size: 20px;
 }
 
-/* img#hinh {
-    max-width: 320px;
-    align-items: center;
-    justify-content: center;
-    padding-top: 120px;
-    padding-left: 5px;
-    padding-right: 5px;
-} */
-
-div#hienhinhanh {
-    display: none;
-    margin-top: 100px;
-}
-
-div#banhkem {
-    display: none;
-    margin-top: 100px;
-}
-
 input[type="radio"] {
     transform: scale(1.5); /* Phóng to kích thước của nút radio */
     margin-bottom: 10px;
@@ -287,7 +270,7 @@ input[type="radio"]:checked {
     width: 50px; /* Kích thước vòng tròn */
     height: 50px; /* Kích thước vòng tròn */
     animation: spin 1s linear infinite; /* Tạo hiệu ứng quay */
-    margin-top: 260px;
+    margin: 0 auto; /* Căn giữa vòng tròn */
 }
 
 @keyframes spin {

@@ -166,8 +166,8 @@
             "images/giahan7.jpg",
             "images/giahan8.jpg",
             "images/giahan9.jpg",
-            "images/giahan10.jpg",
             "images/giahan11.jpg",
+            "images/giahan10.jpg",
             "images/giahan12.jpg",
         ]
 
@@ -433,6 +433,8 @@
                 loadingAnimation.style.display = "none";
                 header.style.background = "#ffc0cb";
                 footer.style.background = "#ffc0cb";
+                // header.style.display = "none";
+                // footer.style.display = "none";
                 body.style.background = "#ffc0cb";
                 setTimeout(function() {
                     chayChuDiv.style.display = "block";
@@ -446,7 +448,7 @@
                                 chayChu3Div.style.display = "none"
                                 hinhAnhDiv.style.display = "block";
                                 showNextImage();
-                                setInterval(showNextImage, 100);
+                                setInterval(showNextImage, 150);
                                 setTimeout(function() {
                                     hinhAnhDiv.style.display = "none";
                                     chayChu4Div.style.display = "block";
