@@ -8,12 +8,12 @@
 
 body {
     font-family: 'Patrick Hand', cursive;
-    background: linear-gradient(135deg, #ffccff, #ff99cc, #ccffcc);
+    background: linear-gradient(135deg, #fff0f5, #ffd1dc, #ccffdd);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     color: #333;
-    animation: gradient-flow 15s ease infinite;
+    animation: gradient-flow 12s ease infinite;
     background-size: 200% 200%;
 }
 
@@ -26,12 +26,12 @@ header {
     color: white;
     text-align: center;
     padding: 1.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
-    font-size: 1.8rem;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    font-size: 1.9rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
 }
 
 .party-hat {
@@ -51,6 +51,7 @@ header h1 {
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
     border-bottom: 40px solid #ffd700;
+    filter: drop-shadow(0 0 8px #ffd700);
 }
 
 .party-hat::after {
@@ -63,7 +64,7 @@ header h1 {
     height: 12px;
     background: #ff4444;
     border-radius: 50%;
-    box-shadow: 0 0 10px #ff4444;
+    box-shadow: 0 0 12px #ff4444;
 }
 
 main {
@@ -76,9 +77,9 @@ main {
 
 .card-container {
     position: relative;
-    width: 380px;
-    height: 480px;
-    perspective: 1200px;
+    width: 360px;
+    height: 460px;
+    perspective: 1000px;
     margin-bottom: 2rem;
 }
 
@@ -87,20 +88,20 @@ main {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    background: linear-gradient(45deg, #fff, #fff0f5);
+    background: linear-gradient(45deg, #fff0f5, #f0f8ff);
     border-radius: 16px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 2rem;
     text-align: center;
-    transition: transform 0.8s ease, box-shadow 0.3s ease;
+    transition: transform 0.7s ease, box-shadow 0.3s ease;
 }
 
 .card-front:hover, .card-back:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
 }
 
 .card-back {
@@ -116,24 +117,25 @@ main {
 }
 
 .envelope {
-    width: 120px;
-    height: 80px;
-    background: #f4f4f4;
-    border: 3px solid #ff69b4;
+    width: 110px;
+    height: 75px;
+    background: #f9f9f9;
+    border: 2px solid #ff69b4;
     position: relative;
     margin-bottom: 1rem;
     animation: pulse 3s infinite;
+    border-radius: 6px;
 }
 
 .envelope::before {
     content: '';
     position: absolute;
-    top: -60%;
+    top: -50%;
     left: 0;
     width: 100%;
-    height: 60%;
-    background: #f4f4f4;
-    border-bottom: 3px solid #ff69b4;
+    height: 50%;
+    background: #f9f9f9;
+    border-bottom: 2px solid #ff69b4;
     transform: rotate(45deg);
     transform-origin: bottom;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -141,11 +143,11 @@ main {
 
 .party-scene, .celebration {
     width: 100%;
-    max-width: 550px;
-    background: linear-gradient(45deg, #fff0f5, #e6f3fa);
+    max-width: 520px;
+    background: linear-gradient(45deg, #fff5f7, #e6faff);
     border-radius: 16px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    padding: 2.5rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
     text-align: center;
     margin-bottom: 2rem;
     position: relative;
@@ -161,42 +163,72 @@ main {
     opacity: 1;
 }
 
-h2 {
-    color: #ff69b4;
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-    text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff85a2;
-    animation: sparkle-text 2s infinite;
+.party-scene {
+    position: relative;
+    border: 2px dashed #ff69b4;
 }
 
-p {
-    font-size: 1.3rem;
+h2 {
+    color: #ff69b4;
+    font-size: 2.1rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff85a2;
+    animation: sparkle-text 2.5s infinite;
+}
+
+.party-scene p {
+    font-size: 1.2rem;
     color: #444;
+    margin-bottom: 1rem;
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 .btn-pink {
     background: linear-gradient(45deg, #ff69b4, #ff85a2);
     color: white;
-    padding: 0.8rem 2.5rem;
+    padding: 0.7rem 2rem;
     border-radius: 9999px;
     cursor: pointer;
     margin-top: 1rem;
-    font-size: 1.1rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-pink:hover {
     background: linear-gradient(45deg, #ff85a2, #ff69b4);
-    transform: scale(1.15);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-party {
+    background: #d1d1d1;
+    color: #777;
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: none;
+    animation: none;
+}
+
+.party-scene:has(#balloon1:checked, #balloon2:checked, #cakeInteract:checked) .btn-party {
+    background: linear-gradient(45deg, #ff69b4, #ff85a2);
+    color: white;
+    cursor: pointer;
+    pointer-events: auto;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    animation: pulse 1.5s infinite;
+}
+
+.party-scene:has(#balloon1:checked, #balloon2:checked, #cakeInteract:checked) .btn-party:hover {
+    background: linear-gradient(45deg, #ff85a2, #ff69b4);
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .party-items {
     position: relative;
     height: 200px;
-    margin: 2rem 0;
+    margin: 1.5rem 0;
 }
 
 .balloon {
@@ -207,10 +239,13 @@ p {
     cursor: pointer;
     animation: float 3s infinite ease-in-out, wobble 5s infinite;
     transition: transform 0.4s ease, opacity 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.balloon-red { background: #ff4444; left: 20%; top: 10%; }
-.balloon-gold { background: #ffd700; right: 20%; top: 15%; }
+.balloon-red { background: #ff4444; left: 15%; top: 10%; }
+.balloon-gold { background: #ffd700; right: 15%; top: 15%; }
 
 .balloon::before {
     content: '';
@@ -220,12 +255,12 @@ p {
     transform: translateX(-50%);
     width: 0;
     height: 0;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
 }
 
-.balloon-red::before { border-top: 12px solid #ff4444; }
-.balloon-gold::before { border-top: 12px solid #ffd700; }
+.balloon-red::before { border-top: 10px solid #ff4444; }
+.balloon-gold::before { border-top: 10px solid #ffd700; }
 
 .balloon::after {
     content: '';
@@ -240,7 +275,17 @@ p {
     transition: transform 0.4s ease;
 }
 
-#balloon1:checked + .balloon-red,
+.sparkle {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    animation: sparkle 2s infinite;
+}
+
+#balloon1:checked + .balloon-red {
+    transform: scale(0);
+    opacity: 0;
+}
+
 #balloon2:checked + .balloon-gold {
     transform: scale(0);
     opacity: 0;
@@ -251,10 +296,16 @@ p {
     transform: translate(-50%, -50%) scale(2);
 }
 
+#balloon1:checked + .balloon-red .sparkle,
+#balloon2:checked + .balloon-gold .sparkle {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
 .cake {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 55%;
     transform: translate(-50%, -50%);
     width: 120px;
     height: 90px;
@@ -262,6 +313,9 @@ p {
     border-radius: 12px;
     cursor: pointer;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cake::before {
@@ -274,6 +328,7 @@ p {
     height: 25px;
     background: #fff3b0;
     border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .cake::after {
@@ -282,20 +337,32 @@ p {
     top: -35px;
     left: 50%;
     transform: translateX(-50%);
-    width: 10px;
+    width: 8px;
     height: 20px;
     background: #f97316;
-    border-radius: 5px;
+    border-radius: 4px;
     animation: flicker 1s infinite;
+}
+
+.cake .sparkle {
+    font-size: 1.5rem;
+    opacity: 0.8;
+    animation: sparkle 2s infinite;
 }
 
 #cakeInteract:checked + .cake {
     transform: translate(-50%, -50%) scale(1.2) rotate(5deg);
-    box-shadow: 0 0 25px #ff69b4, 0 0 50px #f97316;
+    box-shadow: 0 0 30px #ff69b4, 0 0 60px #f97316;
 }
 
 #cakeInteract:checked + .cake::after {
     opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#cakeInteract:checked + .cake .sparkle {
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 .memory-wall {
@@ -307,25 +374,39 @@ p {
 }
 
 .memory {
-    background: linear-gradient(45deg, #ffd1dc, #ffecf0);
+    background: linear-gradient(135deg, #ffecf0, #ffd1dc, #fff5f7);
     padding: 0.6rem 1.2rem;
     border-radius: 10px;
-    font-size: 1.1rem;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1rem;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: memory-glow 4s infinite ease-in-out;
 }
 
 .memory:hover {
-    transform: scale(1.1);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1) translateY(-4px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #ffd1dc, #ffecf0, #fff5f7);
+}
+
+.memory::before {
+    content: '🎈';
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    font-size: 0.9rem;
+    opacity: 0.6;
+    animation: sparkle 2s infinite;
 }
 
 .final-message {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     color: #ff69b4;
     margin-top: 1rem;
-    text-shadow: 0 0 12px #ff69b4, 0 0 24px #ff85a2;
-    animation: sparkle-text 2s infinite;
+    text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff85a2;
+    animation: sparkle-text 2.5s infinite;
 }
 
 .confetti {
@@ -340,8 +421,8 @@ p {
 .confetti::before, .confetti::after, .confetti > span, .confetti > span::before {
     content: '';
     position: absolute;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     animation: confetti-fall 4s infinite linear;
 }
 
@@ -349,24 +430,28 @@ p {
     left: 20%;
     background: #ff69b4;
     animation-delay: 0s;
+    border-radius: 50%;
 }
 
 .confetti::after {
     left: 40%;
     background: #ffd700;
     animation-delay: 1s;
+    transform: rotate(45deg);
 }
 
 .confetti > span {
     left: 60%;
     background: #40c4ff;
     animation-delay: 2s;
+    border-radius: 50%;
 }
 
 .confetti > span::before {
     left: 80%;
     background: #ff4444;
     animation-delay: 3s;
+    transform: rotate(45deg);
 }
 
 footer {
@@ -374,23 +459,23 @@ footer {
     color: white;
     text-align: center;
     padding: 1.5rem;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
+    50% { transform: translateY(-10px); }
 }
 
 @keyframes wobble {
     0%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(5deg); }
-    75% { transform: rotate(-5deg); }
+    25% { transform: rotate(4deg); }
+    75% { transform: rotate(-4deg); }
 }
 
 @keyframes float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+    50% { transform: translateY(-15px); }
 }
 
 @keyframes confetti-fall {
@@ -404,8 +489,8 @@ footer {
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+    0%, 100% { transform: scale(1); box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); }
+    50% { transform: scale(1.08); box-shadow: 0 5px 15px rgba(255, 105, 180, 0.5); }
 }
 
 @keyframes flicker {
@@ -417,6 +502,16 @@ footer {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+}
+
+@keyframes memory-glow {
+    0%, 100% { box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15); }
+    50% { box-shadow: 0 3px 12px rgba(255, 105, 180, 0.5); }
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
 }
 
 @media (max-width: 600px) {
@@ -434,8 +529,8 @@ footer {
     }
 
     .btn-pink {
-        padding: 0.6rem 2rem;
-        font-size: 1rem;
+        padding: 0.6rem 1.8rem;
+        font-size: 0.9rem;
     }
 
     .party-items {
@@ -449,15 +544,15 @@ footer {
 
     .cake {
         width: 100px;
-        height: 75px;
+        height: 80px;
     }
 
     .memory {
-        font-size: 1rem;
+        font-size: 0.9rem;
         padding: 0.5rem 1rem;
     }
 
     .final-message {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
 }
