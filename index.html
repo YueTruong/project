@@ -1,477 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/0437f7ac9d.js" crossorigin="anonymous"></script>
-    <title>BÀI KIỂM TRA TRẮC NGHIỆM TÂM LÝ</title>
-    <link rel="icon" type="x-icon" href="images\preloader.png" class="responsive">
+    <title>LỜI MỜI SINH NHẬT GIA HÂN!</title>
     <link rel="stylesheet" href="index.css">
 </head>
-<body id="body">
-    <header id="header">
-        <img src="images\logo.png" alt="">
+<body>
+    <header>
+        <div class="party-hat"></div>
+        <h1>LỜI MỜI ĐẶC BIỆT CHO GIA HÂN</h1>
     </header>
 
-    <div id="noidung">
-        <div id="home">
-            <h1 class="center" id="queocom">QUEO COM TU AO Ờ RÌ SỚT</h1>
-            <button id="batdau" onclick="showQuestion1()">BẮT ĐẦU</button>
-        </div>
-    
-        <div id="question1">
-            <h1 class="center" id="reminder">HÃY TRẢ LỜI CÁC CÂU HỎI MỘT CÁCH TRUNG THỰC</h1>
-            <p class="opacity center">Hong trả lời là giựn á!!!</p>
-            <h1><i>Question 1: Giới tính của bạn là?</i></h1>
-            <input type="radio" name="gioitinh" id="nam" value="Nam" onchange="enableButton(), displayAlert()">
-            <label for="nam">Nam</label><br>
-            <input type="radio" name="gioitinh" id="nu" value="Nữ" onchange="enableButton()">
-            <label for="nu">Nữ</label><br>
-            <button id="tieptuc1" onclick="checkGender(), displayAlert()">Tiếp tục</button>
-            <p id="alertMessage">Bạn phải chọn 'Nữ' để tiếp tục!</p>
-            <img id="alertImage" src="images\8lyozb.jpg" alt="" class="imgcenter">
-        </div>
-    
-        <div id="question2">
-            <h1 class="center" id="reminder">HÃY TRẢ LỜI CÁC CÂU HỎI MỘT CÁCH TRUNG THỰC</h1>
-            <p class="opacity center">Hong trả lời là giựn á!!!</p>
-            <h1><i>Question 2: Cung hoàng đạo của bạn?</i></h1>
-            <input type="radio" name="cunghoangdao" id="kimnguu" value="Kim Ngưu" onchange="cungHoangDao()">
-            <label for="kimnguu">a. Kim Ngưu</label><br>
-            <input type="radio" name="cunghoangdao" id="gionga" value="a" onchange="cungHoangDao()">
-            <label for="gionga">b. a</label><br>
-            <input type="radio" name="cunghoangdao" id="giongb" value="b" onchange="cungHoangDao()">
-            <label for="giongb">c. b</label><br>
-            <button id="tieptuc2" onclick="showQuestion3()">Tiếp tục</button>
-        </div>
-        
-        <div id="question3">
-            <h1 class="center" id="reminder">HÃY TRẢ LỜI CÁC CÂU HỎI MỘT CÁCH TRUNG THỰC</h1>
-            <p class="opacity center">Hong trả lời là giựn á!!!</p>
-            <h1><i>Question 3: Ngày tháng năm sinh của bạn?</i></h1>
-            <label for="ngaysinh">Nhập vô:</label>
-            <input type="text" name="ngaysinh" id="ngaysinh" onchange="checkNgaySinh(), displayNgaySinhAlert()"><br>
-            <button id="tieptuc3" onclick="showQuestion4()">Tiếp tục</button>
-            <p id="checkNgaySinhAlertMessage">Bạn phải nhập '24/04/2004' để tiếp tục!</p>
-        </div>
-        
-        <div id="question4">
-            <h1 class="center" id="reminder">HÃY TRẢ LỜI CÁC CÂU HỎI MỘT CÁCH TRUNG THỰC</h1>
-            <p class="opacity center">Hong trả lời là giựn á!!!</p>
-            <h1><i>Question 4: Họ tên của bạn?</i></h1>
-            <label for="hoten">Nhập vô:</label>
-            <input type="text" name="hoten" id="hoten" onchange="checkHoTen(), displayHoTenAlert()"><br>
-            <button id="tieptuc4" onclick="showPreConfirm()">Kết thúc</button>
-            <p id="checkHoTenAlertMessage">Bạn phải nhập 'Đặng Nguyễn Gia Hân' để tiếp tục!</p>
-        </div>
-        
-        <div id="loadingAnimation" class="loading-animation"></div>
-        
-        <div id="confirm">
-            <h1 class="center">THÔNG BÁO</h1>
-            <p class="center"><i>Vui lòng xác nhận các thông tin sau:</i></p>
-            <div class="center">
-                <p>Tên bạn: <b>ĐẶNG NGUYỄN GIA HÂN</b></p>
-                <p>Giới tính: <b>Nữ</b></p>
-                <p>Cung hoàng đạo: <b>Kim Ngưu</b></p>
-                <p>Ngày sinh: <b>24/04/2004</b></p>
+    <main>
+        <!-- Invitation Card -->
+        <input type="checkbox" id="openCard" class="hidden">
+        <div class="card-container">
+            <div class="card-front">
+                <div class="envelope"></div>
+                <h2>Thiệp Mời Sinh Nhật!</h2>
+                <p>Gia Hân ơi, một bữa tiệc lộng lẫy đang chờ bạn!</p>
+                <label for="openCard" class="btn-pink">MỞ THIỆP</label>
             </div>
-            <button id="tieptuc5" onclick="showPreConfirm1()">XÁC NHẬN</button>
+            <div class="card-back">
+                <h2>Tiệc Sinh Nhật Kim Ngưu!</h2>
+                <p>24/04/2004 - Hãy sẵn sàng, Gia Hân!</p>
+            </div>
         </div>
 
-        <div id="chaychu" class="center smooth-display">
-            <p>Chúng tôi nhận thấy rằng...</p>
+        <!-- Party Scene -->
+        <input type="checkbox" id="partyStart" class="hidden">
+        <div class="party-scene">
+            <h2>CHÀO MỪNG ĐẾN BỮA TIỆC!</h2>
+            <p>Chạm vào bóng bay và bánh kem để bắt đầu nào!</p>
+            <div class="party-items">
+                <input type="checkbox" id="balloon1" class="hidden" title="Bóng bay 1">
+                <label for="balloon1" class="balloon balloon-red"></label>
+                <input type="checkbox" id="balloon2" class="hidden" title="Bóng bay 2">
+                <label for="balloon2" class="balloon balloon-gold"></label>
+                <input type="checkbox" id="cakeInteract" class="hidden" title="Bánh kem">
+                <label for="cakeInteract" class="cake"></label>
+            </div>
+            <label for="partyStart" class="btn-pink">BẮT ĐẦU TIỆC</label>
         </div>
 
-        <div id="chaychu2" class="center smooth-display">
-            <p>hôm nay là một ngày đặc biệt...</p>
+        <!-- Celebration Reveal -->
+        <div class="celebration">
+            <h2>CHÚC MỪNG SINH NHẬT!</h2>
+            <p>Đặng Nguyễn Gia Hân - Nữ hoàng Kim Ngưu!</p>
+            <div class="memory-wall">
+                <div class="memory">Tỏa sáng với gu thẩm mỹ đỉnh cao</div>
+                <div class="memory">Trái tim ấm áp, luôn trung thành</div>
+                <div class="memory">Ngày 24/04/2004 rực rỡ nhất</div>
+            </div>
+            <p class="final-message">Chúc Gia Hân một sinh nhật thứ 21 tràn ngập niềm vui, yêu thương và những khoảnh khắc khó quên! 🎉</p>
+            <div class="confetti"></div>
         </div>
+    </main>
 
-        <div id="chaychu3" class="center smooth-display">
-            <p>đó chính là...</p>
-        </div>
-
-        <div id="hienhinhanh" class="smooth-display">
-            <img src="images/giahan1.jpg" alt="" id="hinhanhchay" class="imgcenter displayimg">
-        </div>
-
-        <div id="chaychu4" class="center smooth-display">
-            <p>Chúc mừng sinh nhật...</p>
-        </div>
-
-        <div id="chaychu5" class="center smooth-display">
-            <p>_g2haha44 (aka giahan.)</p>
-        </div>
-
-        <div id="banhkem">
-            <img src="images\banhkem.jpg" alt="" id="hinh" class="imgcenter displayimg">
-            <p class="center">Tặng cái bánh kem nè!</p>
-        </div>
-    </div>
-
-    <script>
-        function showQuestion1() {
-            var divHome = document.getElementById("home");
-            var question1Div = document.getElementById("question1");
-            var question2Div = document.getElementById("question2");
-            var tieptuc1Button = document.getElementById("tieptuc1");
-            var loadingAnimation = document.getElementById("loadingAnimation");
-
-            divHome.style.display = "none";
-            question1Div.style.display = "block";
-            question2Div.style.display = "none";
-            tieptuc1Button.disabled = true;
-            loadingAnimation.style.display = "none";
-        }
-
-        var firstTime = true;
-        var alertMessages = [
-            { message: "Bạn phải chọn 'Nữ' để tiếp tục!", image: "images/8lyozb.jpg" },
-            { message: "Hãy chắc chắn chọn đúng giới tính!", image: "images/8nptg2.jpg" },
-            { message: "Nữ, nữ, nữ!", image: "images/download.jpg" },
-            { message: "Vui lòng chọn 'Nữ' để tiếp tục!", image: "images/8lyq0p.jpg" },
-            { message: "Bạn đã chọn 'Nam' rồi!", image: "images/8nptun.jpg" },
-
-        ];
-
-        var ngaySinhAlertMessages = [
-            "Bạn phải nhập '24/04/2004' để tiếp tục!",
-            "Hãy chắc chắn bạn đã ghi đúng ngày tháng năm sinh!",
-            "Vui lòng nhập '24/04/2004' để tiếp tục!",
-            "Gợi ý: '24/04/2004'",
-            "Lộn ngày rồi cậu ơi!",
-            "Nhập sai rồi!",
-            "Nhập lại đi cậu!",
-        ];
-        
-        var hoTenAlertMessages = [
-            "Bạn phải nhập 'Đặng Nguyễn Gia Hân' để tiếp tục!",
-            "Hãy chắc chắn bạn đã ghi đúng họ tên!",
-            "Vui lòng nhập 'Đặng Nguyễn Gia Hân' để tiếp tục!",
-            "Tên bạn là 'Đặng Nguyễn Gia Hân!",
-            "Nhập sai rồi!",
-            "Nhập lại đi cậu!",
-            "Chừng nào đúng mới được đi tiếp!",
-            "'Vui lòng thử lại!'",
-            "Gợi ý: 'Đặng Nguyễn Gia Hân'",
-        ];
-
-        var hinhAnh = [
-            "images/giahan1.jpg",
-            "images/giahan2.jpg",
-            "images/giahan4.jpg",
-            "images/giahan3.jpg",
-            "images/giahan5.jpg",
-            "images/giahan13.jpg",
-            "images/giahan6.jpg",
-            "images/giahan7.jpg",
-            "images/giahan8.jpg",
-            "images/giahan14.jpg",
-            "images/giahan9.jpg",
-            "images/giahan11.jpg",
-            "images/giahan10.jpg",
-            "images/giahan12.jpg",
-        ]
-
-        var currentImageIndex = 0;
-
-        function showNextImage() {
-            var imageElement = document.getElementById("hinhanhchay");
-            if (currentImageIndex < hinhAnh.length - 1) {
-                currentImageIndex++;
-            } else {
-                currentImageIndex = 0;
-            }
-            imageElement.src = hinhAnh[currentImageIndex];
-        }
-
-        var initialX;
-        var initialY;
-        var namSelected = false;
-
-        window.onload = function() {
-            var tieptuc1Button = document.getElementById("tieptuc1");
-            var rect = tieptuc1Button.getBoundingClientRect();
-            initialX = rect.left;
-            initialY = rect.top;
-        }
-
-        function getRandomMessage() {
-            return alertMessages[Math.floor(Math.random() * alertMessages.length)];
-        }
-
-        function getRandomNgaySinhMessage() {
-            return ngaySinhAlertMessages[Math.floor(Math.random() * ngaySinhAlertMessages.length)];
-        }
-
-        function getRandomHoTenMessage() {
-            return hoTenAlertMessages[Math.floor(Math.random() * hoTenAlertMessages.length)];
-        }
-
-        function displayAlert() {
-            var namRadioButton = document.getElementById("nam");
-            var alertMessage = document.getElementById("alertMessage");
-            var alertImage = document.getElementById("alertImage");
-
-            if (namRadioButton.checked && !firstTime) {
-                namSelected = true;
-                var randomMessage = getRandomMessage();
-                alertMessage.innerText = randomMessage.message;
-                alertImage.src = randomMessage.image;
-                alertMessage.style.display = "block";
-                alertImage.style.display = "block";
-                moveButton();
-            }
-        }
-
-        function displayNgaySinhAlert() {
-            var ngaySinhInput = document.getElementById("ngaysinh").value;
-            var ngaySinhAlertMessage = document.getElementById("checkNgaySinhAlertMessage");
-
-            if (ngaySinhInput === "24/04/2004") {
-                ngaySinhAlertMessage.style.display = "none";
-            }
-            else {
-                ngaySinhAlertMessage.innerText = getRandomNgaySinhMessage();
-                ngaySinhAlertMessage.style.display = "block"
-            }
-        }
-
-        function displayHoTenAlert() {
-            var hoTenInput = document.getElementById("hoten").value;
-            var hoTenAlertMessage = document.getElementById("checkHoTenAlertMessage");
-
-            if (hoTenInput === "Đặng Nguyễn Gia Hân") {
-                hoTenAlertMessage.style.display = "none";
-            }
-            else {
-                hoTenAlertMessage.innerText = getRandomHoTenMessage();
-                hoTenAlertMessage.style.display = "block"
-            }
-        }
-
-        function moveButton() {
-            var tieptuc1Button = document.getElementById("tieptuc1");
-            var noidungDiv = document.getElementById("noidung");
-
-            var newX = Math.floor(Math.random() * (noidungDiv.offsetWidth - tieptuc1Button.offsetWidth));
-            var newY = Math.floor(Math.random() * (noidungDiv.offsetHeight - tieptuc1Button.offsetHeight));
-
-            tieptuc1Button.style.position = "absolute";
-            tieptuc1Button.style.left = newX + "px";
-            tieptuc1Button.style.top = newY + "px";
-        }
-
-        function enableButton() {
-            var namRadioButton = document.getElementById("nam");
-            var nuRadioButton = document.getElementById("nu");
-            var tieptuc1Button = document.getElementById("tieptuc1");
-            var alertMessage = document.getElementById("alertMessage");
-
-            if (nuRadioButton.checked || namRadioButton.checked) {
-                tieptuc1Button.disabled = false;
-                alertMessage.style.display = "none";
-                
-                if (tieptuc1Button.style.position === "absolute") {
-                    // Nếu nút "Tiếp tục" đang ở vị trí ngẫu nhiên, thiết lập lại vị trí về ban đầu
-                    tieptuc1Button.style.position = "static";
-                    tieptuc1Button.style.left = initialX + "px";
-                    tieptuc1Button.style.top = initialY + "px";
-                }
-            }
-            else {
-                tieptuc1Button.disabled = true;
-                tieptuc1Button.style.position = "static";
-                tieptuc1Button.style.left = initialX + "px";
-                tieptuc1Button.style.top = initialY + "px";
-                namSelected = false; // Reset trạng thái khi chọn lại Nữ
-            }
-            firstTime = false;
-        }
-
-        function checkGender() {
-            var namRadioButton = document.getElementById("nam");
-            var nuRadioButton = document.getElementById("nu");
-            var alertMessage = document.getElementById("alertMessage");
-            var tieptuc1Button = document.getElementById("tieptuc1");
-
-            if (namRadioButton.checked || nuRadioButton.checked) {
-                tieptuc1Button.disabled = false;
-                alertMessage.style.display = "none";
-                
-                if (namRadioButton.checked) {
-                    alertMessage.innerText = getRandomMessage();
-                    alertMessage.style.display = "block";
-                    moveButton(); // Di chuyển nút "Tiếp tục"
-                }
-                else if (nuRadioButton.checked) {
-                    tieptuc1Button.click(showQuestion2());
-                }
-            }
-            firstTime = false;
-        }
-
-        function showQuestion2() {
-            var divHome = document.getElementById("home");
-            var question1Div = document.getElementById("question1");
-            var question2Div = document.getElementById("question2");
-            var tieptuc2Button = document.getElementById("tieptuc2");
-            var loadingAnimation = document.getElementById("loadingAnimation");
-
-            divHome.style.display = "none";
-            question1Div.style.display = "none";
-            question2Div.style.display = "block";
-            tieptuc2Button.disabled = true
-            loadingAnimation.style.display = "none";
-        }
-
-        function cungHoangDao() {
-            var kimNguuRadioButton = document.getElementById("kimnguu");
-            var giongARadioButton = document.getElementById("gionga");
-            var giongBRadioButton = document.getElementById("giongb");
-            var tieptuc2Button = document.getElementById("tieptuc2");
-
-            if (kimNguuRadioButton.checked || giongARadioButton.checked || giongBRadioButton.checked) {
-                tieptuc2Button.disabled = false;
-            }
-            else {
-                tieptuc2Button.disabled = true;
-            }
-        }
-
-        function showQuestion3() {
-            var divHome = document.getElementById("home");
-            var question1Div = document.getElementById("question1");
-            var question2Div = document.getElementById("question2");
-            var question3Div = document.getElementById("question3");
-            var tieptuc3Button = document.getElementById("tieptuc3");
-            var loadingAnimation = document.getElementById("loadingAnimation");
-
-            divHome.style.display = "none";
-            question1Div.style.display = "none";
-            question2Div.style.display = "none";
-            question3Div.style.display = "block";
-            tieptuc3Button.disabled = true;
-            loadingAnimation.style.display = "none";
-        }
-
-        function checkNgaySinh() {
-            var ngaySinhInput = document.getElementById("ngaysinh").value;
-            var tieptuc3Button = document.getElementById("tieptuc3");
-
-            if (ngaySinhInput === "24/04/2004") {
-                tieptuc3Button.disabled = false;
-            } else {
-                tieptuc3Button.disabled = true;
-            }
-        }
-
-        function showQuestion4() {
-            var divHome = document.getElementById("home");
-            var question1Div = document.getElementById("question1");
-            var question2Div = document.getElementById("question2");
-            var question3Div = document.getElementById("question3");
-            var question4Div = document.getElementById("question4");
-            var tieptuc4Button = document.getElementById("tieptuc4");
-            var loadingAnimation = document.getElementById("loadingAnimation");
-
-            divHome.style.display = "none";
-            question1Div.style.display = "none";
-            question2Div.style.display = "none";
-            question3Div.style.display = "none";
-            question4Div.style.display = "block";
-            tieptuc4Button.disabled = true;
-            loadingAnimation.style.display = "none";
-        }
-
-        function checkHoTen() {
-            var hoTenInput = document.getElementById("hoten").value;
-            var tieptuc4Button = document.getElementById("tieptuc4");
-
-            if (hoTenInput === "Đặng Nguyễn Gia Hân") {
-                tieptuc4Button.disabled = false;
-            }
-            else {
-                tieptuc4Button.disabled = true;
-            }
-        }
-
-        function showPreConfirm() {
-            var loadingAnimation = document.getElementById("loadingAnimation");
-            var ConfirmDiv = document.getElementById("confirm");
-            var tieptuc4Button = document.getElementById("tieptuc4");
-            var question4Div = document.getElementById("question4");
-            
-            loadingAnimation.style.display = "block";
-            question4Div.style.display = "none";
-
-            setTimeout(function() {
-                loadingAnimation.style.display = "none";
-                setTimeout(function() {
-                    ConfirmDiv.style.display = "block";
-                }, 1000);
-            }, 1000);
-        }
-
-        function showPreConfirm1() {
-            var loadingAnimation = document.getElementById("loadingAnimation");
-            var ConfirmDiv = document.getElementById("confirm");
-            var tieptuc5Button = document.getElementById("tieptuc5");
-            var chayChuDiv = document.getElementById("chaychu");
-            var chayChu2Div = document.getElementById("chaychu2");
-            var chayChu3Div = document.getElementById("chaychu3");
-            var chayChu4Div = document.getElementById("chaychu4");
-            var chayChu5Div = document.getElementById("chaychu5");
-            var hinhAnhDiv = document.getElementById("hienhinhanh");
-            var banhKemDiv = document.getElementById("banhkem");
-            var header = document.getElementById("header");
-            var footer = document.getElementById("footer");
-            var body = document.getElementById("body");
-            
-            loadingAnimation.style.display = "block";
-            ConfirmDiv.style.display = "none";
-            
-            setTimeout(function() {
-                loadingAnimation.style.display = "none";
-                header.style.background = "#ffc0cb";
-                footer.style.background = "#ffc0cb";
-                // header.style.display = "none";
-                // footer.style.display = "none";
-                body.style.background = "#ffc0cb";
-                setTimeout(function() {
-                    chayChuDiv.style.display = "block";
-                    setTimeout(function() {
-                        chayChuDiv.style.display = "none"
-                        chayChu2Div.style.display = "block";
-                        setTimeout(function() {
-                            chayChu2Div.style.display = "none"
-                            chayChu3Div.style.display = "block";
-                            setTimeout(function() {
-                                chayChu3Div.style.display = "none"
-                                hinhAnhDiv.style.display = "block";
-                                showNextImage();
-                                setInterval(showNextImage, 150);
-                                setTimeout(function() {
-                                    hinhAnhDiv.style.display = "none";
-                                    chayChu4Div.style.display = "block";
-                                    setTimeout(function() {
-                                        chayChu4Div.style.display = "none";
-                                        chayChu5Div.style.display = "block";
-                                        setTimeout(function() {
-                                            chayChu5Div.style.display = "none";
-                                            banhKemDiv.style.display = "block";
-                                        }, 4000);
-                                    }, 4000);
-                                }, 4000);
-                            }, 4000);
-                        }, 4000);
-                    }, 4000);
-                }, 4000);
-            }, 2000);
-        }
-    </script>
-    <footer id="footer">
-        © Ngồi mò mấy ngày bởi YueTruong - All rights reserved.
+    <footer>
+        <p>© Tạo với 💖 bởi YueTruong - Chúc Gia Hân sinh nhật vui vẻ!</p>
     </footer>
 </body>
 </html>
