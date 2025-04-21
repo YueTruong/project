@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LỜI MỜI SINH NHẬT _G2HAHA44!</title>
+    <title>Thiệp Mời Sinh Nhật _g2haha44 - 21 Tỏa Sáng!</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <header>
         <div class="party-hat"></div>
-        <h1>LỜI MỜI DÀNH CHO _G2HAHA44</h1>
+        <h1>THIỆP MỜI SINH NHẬT _G2HAHA44</h1>
     </header>
 
     <main>
@@ -19,53 +19,66 @@
             <div class="card-front">
                 <div class="envelope"></div>
                 <h2>Thiệp Mời Sinh Nhật!</h2>
-                <p>Eyyy _G2HAHA44, tiệc sinh nhật siêu vui chờ cậu nè!</p>
+                <p>Gia Hân thân mến, tiệc sinh nhật lần thứ 21 đang chờ bạn!</p>
                 <label for="openCard" class="btn-pink">MỞ THIỆP</label>
             </div>
             <div class="card-back">
                 <h2>Tiệc Sinh Nhật Kim Ngưu!</h2>
-                <p>24/04/2004 - Cùng quậy nào, _G2HAHA44!</p>
+                <p>24/04/2004 - Quẩy lên đeee!</p>
             </div>
         </div>
 
         <!-- Party Scene -->
-        <input type="checkbox" id="partyStart" class="hidden">
+        <input type="checkbox" id="balloon1" class="hidden" title="Bóng bay đỏ">
+        <input type="checkbox" id="balloon2" class="hidden" title="Bóng bay vàng">
+        <input type="checkbox" id="cakeInteract" class="hidden" title="Bánh kem">
+        <input type="checkbox" id="giftBox" class="hidden" title="Hộp quà">
+        <input type="checkbox" id="candleLight" class="hidden" title="Nến">
+        <input type="checkbox" id="partyPopper" class="hidden" title="Pháo giấy">
         <div class="party-scene">
-            <h2>VÀO TIỆC THÔI!</h2>
-            <p>Làm bể bóng bay và chạm bánh kem để mở tiệc nha!</p>
+            <h2>CHUẨN BỊ TIỆC SINH NHẬT!</h2>
+            <p>Làm bể bóng bay, mở hộp quà, chạm bánh kem, thắp nến, và kéo pháo giấy để mở tiệc!</p>
             <div class="party-items">
-                <input type="checkbox" id="balloon1" class="hidden" title="Bóng bay đỏ">
                 <label for="balloon1" class="balloon balloon-red">
                     <span class="sparkle">✨</span>
                 </label>
-                <input type="checkbox" id="balloon2" class="hidden" title="Bóng bay vàng">
                 <label for="balloon2" class="balloon balloon-gold">
                     <span class="sparkle">✨</span>
                 </label>
-                <input type="checkbox" id="cakeInteract" class="hidden" title="Bánh kem">
                 <label for="cakeInteract" class="cake">
                     <span class="sparkle">🎂</span>
                 </label>
+                <label for="giftBox" class="gift-box">
+                    <span class="sparkle">🎁</span>
+                </label>
+                <label for="candleLight" class="candle">
+                    <span class="sparkle">🕯️</span>
+                </label>
+                <label for="partyPopper" class="party-popper">
+                    <span class="sparkle">🎉</span>
+                </label>
             </div>
-            <label for="partyStart" class="btn-pink btn-party">MỞ TIỆC</label>
+            <button id="partyButton" class="btn-pink btn-party" disabled>MỞ TIỆC</button>
         </div>
 
         <!-- Celebration Reveal -->
         <div class="celebration">
-            <h2>CHÚC MỪNG SINH NHẬT!</h2>
-            <p>Gia Hân - Kim Ngưu đỉnh nhất!</p>
+            <h2>CHÚC MỪNG SINH NHẬT GIA HÂN!</h2>
+            <p>Kim Ngưu rực rỡ nhất, tỏa sáng ở tuổi 21!</p>
             <div class="memory-wall">
                 <div class="memory">Luôn xinh đẹp và đáng yêu ạ!</div>
-                <div class="memory">Kim Ngưu chính gốc, siêu chill mà đáng tin!</div>
+                <div class="memory">Kim Ngưu chân thành, luôn là chỗ dựa vững chắc!</div>
                 <div class="memory">Sinh nhật 21 tuổi tỏa sáng như chính cậu!</div>
             </div>
-            <p class="final-message">Chúc Hân sinh nhật 21 thật chill, ngập niềm vui và kỷ niệm đẹp nè! 🎉</p>
+            <p class="final-message">Chúc Gia Hân sinh nhật 21 tràn đầy niềm vui, thành công và những kỷ niệm đáng nhớ! 🎉</p>
             <div class="confetti"></div>
         </div>
     </main>
 
     <footer>
-        <p>© Tạo với 💖 bởi YueTruong - Giữ đúng lời hứa rùi nha!</p>
+        <p>© Tạo với 💖 bởi YueTruong - T giữ lời hứa rùi nha!</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

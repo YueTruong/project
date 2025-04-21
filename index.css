@@ -30,7 +30,7 @@ header {
 }
 
 header h1 {
-    font-size: 1.9rem;
+    font-size: 2.2rem;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
 }
 
@@ -141,7 +141,28 @@ main {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.party-scene, .celebration {
+.party-scene {
+    width: 100%;
+    max-width: 520px;
+    background: linear-gradient(45deg, #fff5f7, #e6faff);
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    border: 2px dashed #ff69b4;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+#openCard:checked ~ .party-scene {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.celebration {
     width: 100%;
     max-width: 520px;
     background: linear-gradient(45deg, #fff5f7, #e6faff);
@@ -152,32 +173,24 @@ main {
     margin-bottom: 2rem;
     position: relative;
     overflow: hidden;
-    transform: translateY(100%);
-    opacity: 0;
-    transition: transform 0.6s ease, opacity 0.6s ease;
+    display: none;
 }
 
-#openCard:checked ~ .party-scene,
-#partyStart:checked ~ .celebration {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.party-scene {
-    position: relative;
-    border: 2px dashed #ff69b4;
+.celebration.active {
+    display: block;
+    animation: reveal 0.6s ease forwards;
 }
 
 h2 {
     color: #ff69b4;
-    font-size: 2.1rem;
+    font-size: 2.3rem;
     margin-bottom: 0.5rem;
     text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff85a2;
     animation: sparkle-text 2.5s infinite;
 }
 
 .party-scene p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: #444;
     margin-bottom: 1rem;
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
@@ -188,46 +201,35 @@ h2 {
     color: white;
     padding: 0.7rem 2rem;
     border-radius: 9999px;
+    border: none;
     cursor: pointer;
     margin-top: 1rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.btn-pink:hover {
+.btn-pink:hover:not(:disabled) {
     background: linear-gradient(45deg, #ff85a2, #ff69b4);
     transform: scale(1.1);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.btn-party {
+.btn-party:disabled {
     background: #d1d1d1;
     color: #777;
     cursor: not-allowed;
-    pointer-events: none;
     box-shadow: none;
     animation: none;
 }
 
-.party-scene:has(#balloon1:checked, #balloon2:checked, #cakeInteract:checked) .btn-party {
-    background: linear-gradient(45deg, #ff69b4, #ff85a2);
-    color: white;
-    cursor: pointer;
-    pointer-events: auto;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+.btn-party:not(:disabled) {
     animation: pulse 1.5s infinite;
-}
-
-.party-scene:has(#balloon1:checked, #balloon2:checked, #cakeInteract:checked) .btn-party:hover {
-    background: linear-gradient(45deg, #ff85a2, #ff69b4);
-    transform: scale(1.1);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .party-items {
     position: relative;
-    height: 200px;
+    height: 260px;
     margin: 1.5rem 0;
 }
 
@@ -242,10 +244,11 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px; /* Larger touch target */
 }
 
-.balloon-red { background: #ff4444; left: 15%; top: 10%; }
-.balloon-gold { background: #ffd700; right: 15%; top: 15%; }
+.balloon-red { background: #ff4444; left: 10%; top: 10%; }
+.balloon-gold { background: #ffd700; left: 30%; top: 10%; }
 
 .balloon::before {
     content: '';
@@ -281,31 +284,31 @@ h2 {
     animation: sparkle 2s infinite;
 }
 
-#balloon1:checked + .balloon-red {
+#balloon1:checked ~ .party-scene .balloon-red {
     transform: scale(0);
     opacity: 0;
 }
 
-#balloon2:checked + .balloon-gold {
+#balloon2:checked ~ .party-scene .balloon-gold {
     transform: scale(0);
     opacity: 0;
 }
 
-#balloon1:checked + .balloon-red::after,
-#balloon2:checked + .balloon-gold::after {
+#balloon1:checked ~ .party-scene .balloon-red::after,
+#balloon2:checked ~ .party-scene .balloon-gold::after {
     transform: translate(-50%, -50%) scale(2);
 }
 
-#balloon1:checked + .balloon-red .sparkle,
-#balloon2:checked + .balloon-gold .sparkle {
+#balloon1:checked ~ .party-scene .balloon-red .sparkle,
+#balloon2:checked ~ .party-scene .balloon-gold .sparkle {
     opacity: 0;
     transition: opacity 0.4s ease;
 }
 
 .cake {
     position: absolute;
-    left: 50%;
-    top: 55%;
+    left: 60%;
+    top: 40%;
     transform: translate(-50%, -50%);
     width: 120px;
     height: 90px;
@@ -316,6 +319,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px; /* Larger touch target */
 }
 
 .cake::before {
@@ -350,19 +354,170 @@ h2 {
     animation: sparkle 2s infinite;
 }
 
-#cakeInteract:checked + .cake {
+#cakeInteract:checked ~ .party-scene .cake {
     transform: translate(-50%, -50%) scale(1.2) rotate(5deg);
     box-shadow: 0 0 30px #ff69b4, 0 0 60px #f97316;
 }
 
-#cakeInteract:checked + .cake::after {
+#cakeInteract:checked ~ .party-scene .cake::after {
     opacity: 0;
     transition: opacity 0.5s ease;
 }
 
-#cakeInteract:checked + .cake .sparkle {
+#cakeInteract:checked ~ .party-scene .cake .sparkle {
     opacity: 0;
     transition: opacity 0.5s ease;
+}
+
+.gift-box {
+    position: absolute;
+    left: 10%;
+    top: 40%;
+    width: 60px;
+    height: 60px;
+    background: #ff85a2;
+    border: 3px solid #ffd700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.5s ease, border 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Larger touch target */
+}
+
+.gift-box::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 60px;
+    background: #ffd700;
+    opacity: 0.7;
+}
+
+.gift-box::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 10px;
+    background: #ffd700;
+    opacity: 0.7;
+}
+
+.gift-box .sparkle {
+    font-size: 1.4rem;
+    opacity: 0.8;
+    animation: sparkle 2s infinite;
+}
+
+#giftBox:checked ~ .party-scene .gift-box {
+    transform: scale(1.1);
+    border: 3px solid transparent;
+}
+
+#giftBox:checked ~ .party-scene .gift-box::before,
+#giftBox:checked ~ .party-scene .gift-box::after {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#giftBox:checked ~ .party-scene .gift-box .sparkle {
+    opacity: 1;
+    transform: scale(1.5);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.candle {
+    position: absolute;
+    left: 35%;
+    top: 70%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 50px;
+    background: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: box-shadow 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Larger touch target */
+}
+
+.candle::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 12px;
+    background: #f97316;
+    border-radius: 50%;
+    animation: flicker 1s infinite;
+}
+
+.candle .sparkle {
+    font-size: 1.2rem;
+    opacity: 0;
+    animation: none;
+}
+
+#candleLight:checked ~ .party-scene .candle {
+    box-shadow: 0 0 20px #f97316, 0 0 40px #ff69b4;
+}
+
+#candleLight:checked ~ .party-scene .candle .sparkle {
+    opacity: 1;
+    animation: sparkle 1.5s infinite;
+    transition: opacity 0.5s ease;
+}
+
+.party-popper {
+    position: absolute;
+    left: 60%;
+    top: 70%;
+    width: 50px;
+    height: 50px;
+    background: #40c4ff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Larger touch target */
+}
+
+.party-popper::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, #ffd700, transparent);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.4s ease;
+}
+
+.party-popper .sparkle {
+    font-size: 1.3rem;
+    opacity: 0.8;
+    animation: sparkle 2s infinite;
+}
+
+#partyPopper:checked ~ .party-scene .party-popper {
+    transform: scale(0.8);
+    opacity: 0.5;
+}
+
+#partyPopper:checked ~ .party-scene .party-popper::after {
+    transform: scale(2);
+}
+
+#partyPopper:checked ~ .party-scene .party-popper .sparkle {
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 .memory-wall {
@@ -377,7 +532,7 @@ h2 {
     background: linear-gradient(135deg, #ffecf0, #ffd1dc, #fff5f7);
     padding: 0.6rem 1.2rem;
     border-radius: 10px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     position: relative;
@@ -402,7 +557,7 @@ h2 {
 }
 
 .final-message {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: #ff69b4;
     margin-top: 1rem;
     text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff85a2;
@@ -462,6 +617,10 @@ footer {
     box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.2);
 }
 
+footer p {
+    font-size: 1rem;
+}
+
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
@@ -514,6 +673,17 @@ footer {
     50% { opacity: 1; }
 }
 
+@keyframes reveal {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 @media (max-width: 600px) {
     .card-container {
         width: 300px;
@@ -521,38 +691,77 @@ footer {
     }
 
     h2 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     p {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
     .btn-pink {
         padding: 0.6rem 1.8rem;
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .party-items {
-        height: 160px;
+        height: 300px; /* Increased for more space */
     }
 
     .balloon {
-        width: 50px;
-        height: 70px;
+        width: 60px;
+        height: 80px;
+        padding: 12px; /* Larger touch target */
     }
+
+    .balloon-red { left: 10%; top: 10%; }
+    .balloon-gold { left: 35%; top: 10%; }
 
     .cake {
         width: 100px;
         height: 80px;
+        left: 60%;
+        top: 40%;
+        padding: 12px; /* Larger touch target */
+    }
+
+    .gift-box {
+        width: 60px;
+        height: 60px;
+        left: 10%;
+        top: 40%;
+        padding: 12px; /* Larger touch target */
+    }
+
+    .candle {
+        width: 24px;
+        height: 50px;
+        left: 35%;
+        top: 70%;
+        padding: 12px; /* Larger touch target */
+    }
+
+    .party-popper {
+        width: 50px;
+        height: 50px;
+        left: 60%;
+        top: 70%;
+        padding: 12px; /* Larger touch target */
     }
 
     .memory {
-        font-size: 0.9rem;
+        font-size: 1rem;
         padding: 0.5rem 1rem;
     }
 
     .final-message {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
+    }
+
+    footer {
+        padding: 1rem;
+    }
+
+    footer p {
+        font-size: 0.9rem;
     }
 }
